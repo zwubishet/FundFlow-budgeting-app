@@ -1,0 +1,11 @@
+lib/
+├── models/
+│   └── transaction.dart
+├── pages/
+│   ├── home_page.dart
+│   ├── add_transaction_page.dart
+│   ├── transaction_list_page.dart
+│   ├── ai_analysis_page.dart
+├── providers/
+│   └── transaction_provider.dart
+├── main.dart
