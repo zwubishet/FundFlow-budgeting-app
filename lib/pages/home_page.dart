@@ -1,3 +1,4 @@
+import 'package:budget_app/component/atm_card.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:provider/provider.dart';
@@ -58,44 +59,50 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Summary Card
-            Card(
-              elevation: 4,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
-                      children: [
-                        Text('Income', style: TextStyle(color: Colors.green)),
-                        Text(
-                          '\$${income.toStringAsFixed(2)}',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text('Expenses', style: TextStyle(color: Colors.red)),
-                        Text(
-                          '\$${expenses.toStringAsFixed(2)}',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Text('Net', style: TextStyle(color: Colors.blue)),
-                        Text(
-                          '\$${net.toStringAsFixed(2)}',
-                          style: TextStyle(fontSize: 18),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+            AtmCard(
+              id: supabase.auth.currentUser!.id,
+              income: income,
+              expense: expenses,
+              net: income - expenses,
             ),
+            // Card(
+            //   elevation: 4,
+            //   child: Padding(
+            //     padding: const EdgeInsets.all(16.0),
+            //     child: Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //       children: [
+            //         Column(
+            //           children: [
+            //             Text('Income', style: TextStyle(color: Colors.green)),
+            //             Text(
+            //               '\$${income.toStringAsFixed(2)}',
+            //               style: TextStyle(fontSize: 18),
+            //             ),
+            //           ],
+            //         ),
+            //         Column(
+            //           children: [
+            //             Text('Expenses', style: TextStyle(color: Colors.red)),
+            //             Text(
+            //               '\$${expenses.toStringAsFixed(2)}',
+            //               style: TextStyle(fontSize: 18),
+            //             ),
+            //           ],
+            //         ),
+            //         Column(
+            //           children: [
+            //             Text('Net', style: TextStyle(color: Colors.blue)),
+            //             Text(
+            //               '\$${net.toStringAsFixed(2)}',
+            //               style: TextStyle(fontSize: 18),
+            //             ),
+            //           ],
+            //         ),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             SizedBox(height: 16),
             // Pie Chart
             SizedBox(

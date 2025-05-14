@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../providers/transaction_provider.dart';
 
 class AIAnalysisPage extends StatefulWidget {
-  const AIAnalysisPage({Key? key}) : super(key: key);
+  const AIAnalysisPage({super.key});
 
   @override
   _AIAnalysisPageState createState() => _AIAnalysisPageState();

@@ -7,7 +7,7 @@ import '../providers/transaction_provider.dart';
 import '../models/transaction.dart';
 
 class TransactionListPage extends StatefulWidget {
-  const TransactionListPage({Key? key}) : super(key: key);
+  const TransactionListPage({super.key});
 
   @override
   _TransactionListPageState createState() => _TransactionListPageState();
@@ -64,7 +64,7 @@ class _TransactionListPageState extends State<TransactionListPage> {
             ),
             SizedBox(height: 16),
             // Pie Chart
-            Container(
+            SizedBox(
               height: 200,
               child: PieChart(
                 PieChartData(

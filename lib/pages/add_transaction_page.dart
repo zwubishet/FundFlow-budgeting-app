@@ -9,7 +9,7 @@ import '../models/transaction.dart';
 import 'dart:io';
 
 class AddTransactionPage extends StatefulWidget {
-  const AddTransactionPage({Key? key}) : super(key: key);
+  const AddTransactionPage({super.key});
 
   @override
   _AddTransactionPageState createState() => _AddTransactionPageState();
